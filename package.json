@@ -1,27 +1,46 @@
 {
   "name": "sellit-challenge-api-rest",
+  "type": "module",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "start": "npm run db:migrate && npm run db:seed && node server.js",
+    "db:studio": "drizzle-kit studio",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "tsx src/db/migrate.ts",
+    "db:seed": "tsx src/db/seed.ts",
+    "test": "jest"
   },
   "dependencies": {
+    "dotenv": "^16.5.0",
+    "drizzle-orm": "^0.44.1",
+    "next": "15.3.3",
+    "postgres": "^3.4.7",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "next": "15.3.3"
+    "ulid": "^3.0.0"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@rocketseat/eslint-config": "^2.2.2",
+    "@tailwindcss/postcss": "^4",
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.3.0",
+    "@types/jest": "^29.5.14",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@tailwindcss/postcss": "^4",
-    "tailwindcss": "^4",
-    "eslint": "^9",
+    "drizzle-kit": "^0.31.1",
+    "eslint": "^8.57.1",
     "eslint-config-next": "15.3.3",
-    "@eslint/eslintrc": "^3"
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^30.0.0-beta.3",
+    "next-test-api-route-handler": "^4.0.16",
+    "tailwindcss": "^4",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.19.4",
+    "typescript": "^5"
   }
 }
