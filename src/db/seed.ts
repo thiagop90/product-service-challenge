@@ -1,4 +1,4 @@
-import { generateSlug } from '@/utils/generate-slug'
+import { generateSlug } from '@/lib/generate-slug'
 import { categories } from './schema'
 import { db } from '.'
 
