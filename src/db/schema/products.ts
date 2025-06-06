@@ -18,7 +18,7 @@ export const products = pgTable('products', {
   producerEmail: text('producer_email').notNull(),
   cover: text('cover').notNull(),
   thumbnail: text('thumbnail').notNull(),
-  price: decimal('price').notNull(),
+  price: decimal('price', { precision: 10, scale: 2 }).notNull(),
   updatedAt: timestamp('updated_at').defaultNow(),
   createdAt: timestamp('created_at').defaultNow(),
 })
