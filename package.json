@@ -9,11 +9,13 @@
     "start": "npm run db:migrate && npm run db:seed && node server.js",
     "db:studio": "drizzle-kit studio",
     "db:generate": "drizzle-kit generate",
-    "db:migrate": "tsx src/db/migrate.ts",
+    "db:migrate:postgres": "tsx src/db/migrate-postgres.ts",
+    "db:migrate:neon": "tsx src/db/migrate-neon.ts",
     "db:seed": "tsx src/db/seed.ts",
     "test": "jest"
   },
   "dependencies": {
+    "@neondatabase/serverless": "^1.0.1",
     "dotenv": "^16.5.0",
     "drizzle-orm": "^0.44.1",
     "next": "15.3.3",
