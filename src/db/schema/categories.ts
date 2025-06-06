@@ -8,6 +8,7 @@ export const categories = pgTable('categories', {
     .primaryKey()
     .$defaultFn(() => ulid()),
   name: text('name').notNull(),
+  slug: text('slug').notNull().unique(),
   updatedAt: timestamp('updated_at').defaultNow(),
   createdAt: timestamp('created_at').defaultNow(),
 })
