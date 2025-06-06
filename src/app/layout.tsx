@@ -1,9 +1,14 @@
-import type { Metadata } from 'next'
 import './globals.css'
+import type { Metadata } from 'next'
+import { Geist } from 'next/font/google'
 
 export const metadata: Metadata = {
   title: 'Products API',
 }
+
+const geist = Geist({
+  subsets: ['latin'],
+})
 
 export default function RootLayout({
   children,
@@ -12,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className={geist.className}>{children}</body>
     </html>
   )
 }
