@@ -1,5 +1,6 @@
-import { db } from './connection'
+import { generateSlug } from '@/utils/generate-slug'
 import { categories } from './schema'
+import { db } from '.'
 
 await db.delete(categories)
 
@@ -8,6 +9,7 @@ async function seedDatabase() {
     await db.insert(categories).values({
       id: '01JWMH3FW1H3NDEK49AQWB8AVB',
       name: 'Category Test',
+      slug: generateSlug('Category Test'),
     })
   } catch (error) {
     console.error(error)

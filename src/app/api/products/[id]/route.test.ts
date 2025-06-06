@@ -1,5 +1,5 @@
 import { testApiHandler } from 'next-test-api-route-handler'
-import { db } from '@/db/connection'
+import { db } from '@/db'
 import * as appHandler from './route'
 
 jest.mock('@/db/connection', () => ({

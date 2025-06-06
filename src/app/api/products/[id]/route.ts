@@ -1,4 +1,4 @@
-import { db } from '@/db/connection'
+import { db } from '@/db'
 import { products } from '@/db/schema'
 import { eq } from 'drizzle-orm'
 import { NextResponse } from 'next/server'

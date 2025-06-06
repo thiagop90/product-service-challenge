@@ -7,4 +7,4 @@ config({ path: '.env' })
 
 const client = postgres(process.env.DATABASE_URL!, { max: 1 })
 
-export const db = drizzle(client, { schema })
+export const postgresDb = drizzle(client, { schema })
