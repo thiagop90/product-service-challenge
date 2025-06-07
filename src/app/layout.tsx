@@ -1,9 +1,11 @@
+import { Toaster } from '@/components/ui/sonner'
 import './globals.css'
 import type { Metadata } from 'next'
 import { Geist } from 'next/font/google'
+import { QueryWrapper } from '@/components/react-query'
 
 export const metadata: Metadata = {
-  title: 'Products API',
+  title: 'Product Service',
 }
 
 const geist = Geist({
@@ -17,7 +19,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={geist.className}>{children}</body>
+      <body className={geist.className} suppressHydrationWarning>
+        <QueryWrapper>{children}</QueryWrapper>
+        <Toaster />
+      </body>
     </html>
   )
 }
