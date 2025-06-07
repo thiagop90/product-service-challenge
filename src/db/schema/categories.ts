@@ -9,8 +9,8 @@ export const categories = pgTable('categories', {
     .$defaultFn(() => ulid()),
   name: text('name').notNull(),
   slug: text('slug').notNull().unique(),
-  updatedAt: timestamp('updated_at').defaultNow(),
-  createdAt: timestamp('created_at').defaultNow(),
+  updatedAt: timestamp('updated_at').defaultNow().notNull(),
+  createdAt: timestamp('created_at').defaultNow().notNull(),
 })
 
 export const categoriesRelations = relations(categories, ({ many }) => ({

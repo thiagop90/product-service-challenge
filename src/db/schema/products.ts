@@ -19,8 +19,8 @@ export const products = pgTable('products', {
   cover: text('cover').notNull(),
   thumbnail: text('thumbnail').notNull(),
   price: decimal('price', { precision: 10, scale: 2 }).notNull(),
-  updatedAt: timestamp('updated_at').defaultNow(),
-  createdAt: timestamp('created_at').defaultNow(),
+  updatedAt: timestamp('updated_at').defaultNow().notNull(),
+  createdAt: timestamp('created_at').defaultNow().notNull(),
 })
 
 export const productsRelations = relations(products, ({ one }) => ({
