@@ -50,7 +50,7 @@ DATABASE_URL="postgresql://postgres:docker@localhost:5432/products-api"
 
 ```bash
 npm run db:migrate
-npm run seed
+npm run db:seed
 ```
 
 >  O comando seed criará uma categoria padrão com ID `01JWMH3FW1H3NDEK49AQWB8AVB`. Use este ID para criar produtos.
