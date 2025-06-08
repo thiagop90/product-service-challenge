@@ -74,8 +74,8 @@ export async function GET(request: NextRequest) {
     }
 
     return NextResponse.json({
-      products: allProducts,
       count: allProducts.length,
+      products: allProducts,
     })
   }
 
@@ -97,7 +97,7 @@ export async function GET(request: NextRequest) {
   }
 
   return NextResponse.json({
-    products: searchResults,
     count: searchResults.length,
+    products: searchResults,
   })
 }
