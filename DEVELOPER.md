@@ -29,27 +29,51 @@ npm install
 
 ### 2. Configure o banco de dados
 
+Você pode usar PostgreSQL local via Docker ou Neon Database:
+
+#### PostgreSQL Local (Docker)
+
 Execute o PostgreSQL via Docker:
 
 ```
 docker-compose up drizzle-db -d
 ```
 
+#### Neon Database
+
+Crie uma conta no [Neon](https://neon.tech) e obtenha sua connection string.
+
 ### 3. Configure variáveis de ambiente
 
 Crie o arquivo `.env`:
 
+#### Para PostgreSQL Local:
 ```
 POSTGRES_DB="products-api"
 POSTGRES_USER="postgres"
 POSTGRES_PASSWORD="docker"
 DATABASE_URL="postgresql://postgres:docker@localhost:5432/products-api"
+NEXT_PUBLIC_API_URL="http://localhost:3000"
+```
+
+#### Para Neon Database:
+```
+NEXT_PUBLIC_API_URL="http://localhost:3000"
+USE_NEON="true"
+DATABASE_URL="sua-connection-string-do-neon"
 ```
 
 ### 4. Execute migrações e seed
 
+Para PostgreSQL local:
 ```bash
-npm run db:migrate
+npm run db:migrate:postgres
+npm run db:seed
+```
+
+Para Neon Database:
+```bash
+npm run db:migrate:neon
 npm run db:seed
 ```
 
@@ -168,5 +192,3 @@ transfer-encoding: chunked
   ]
 }
 ```
-
-
